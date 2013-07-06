@@ -6,12 +6,16 @@ from flask import Flask, request
 from flask_reggie import Reggie
 
 
+def create_app():
+    return Flask('test_flask_reggie')
+
+
 class FlaskReggieTestCase(unittest.TestCase):
 
     def setUp(self):
         """ Construct our Flask Test App """
 
-        self.app = Flask('test_flask_reggie')
+        self.app = create_app()
         reggie = Reggie()
         reggie.init_app(self.app)
 
