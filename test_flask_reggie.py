@@ -11,7 +11,7 @@ class FlaskReggieTestCase(unittest.TestCase):
     def setUp(self):
         """ Construct our Flask Test App """
 
-        self.app = Flask('test-flask-reggie')
+        self.app = Flask('test_flask_reggie')
         reggie = Reggie()
         reggie.init_app(self.app)
 
