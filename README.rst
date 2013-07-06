@@ -15,7 +15,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install flask-redis
+    pip install flask-reggie
 
 
 Configuration
