@@ -1,43 +1,56 @@
 Flask-Reggie
-========
+============
 
-.. image:: https://secure.travis-ci.org/rhyselsmore/flask-reggie.png?branch=master
 
-*Under Construction*
+.. image:: https://travis-ci.org/rhyselsmore/flask-reggie.png?branch=master
+        :target: https://travis-ci.org/rhyselsmore/flask-reggie
+
+.. image:: https://pypip.in/d/Flask-Reggie/badge.png
+        :target: https://crate.io/packages/Flask-Reggie/
 
 Enable Regex Routes within Flask
 
 Installation
 ------------
 
-Installation occurs via 1 command::
+.. code-block:: bash
 
-    pip install flask-reggie
+    pip install flask-redis
+
 
 Configuration
------------
+-------------
 
-Follow the typical pattern for installing Flask extensions::
+To enable regex routes within your application
 
-    from flask import Flask
-    from flask_reggie import Reggie
-
-    app = Flask(__name__)
-    reggie = Reggie(app)
-
-*or*::
+.. code-block:: python
 
     from flask import Flask
     from flask_reggie import Reggie
 
     app = Flask(__name__)
+    Reggie(app)
+
+or
+
+.. code-block:: python
+
+    from flask import Flask
+    from flask_reggie import Reggie
+
     reggie = Reggie()
-    reggie.init_app(app)
+
+    def create_app():
+        app = Flask(__name__)
+        reggie.init_app(app)
+        return app
 
 Usage
 -----
 
 If we were looking to have a UUID supplied as a view argument, we would follow this pattern::
+
+.. code-block:: python
 
     @app.route('/<regex("[0-9a-f]{32}"):uuid>')
     def example(uuid):
