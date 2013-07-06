@@ -17,7 +17,6 @@ Installation
 
     pip install flask-reggie
 
-
 Configuration
 -------------
 

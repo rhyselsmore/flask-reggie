@@ -11,7 +11,7 @@ History
 - Updated TravisCI (Comprehensive tests of multiple versions of Flask).
 
 0.0.1 (20/12/2012)
-----------------
+------------------
 
 - Conception
 - Initial Commit of Package to GitHub.
