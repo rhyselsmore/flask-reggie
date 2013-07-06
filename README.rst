@@ -48,7 +48,7 @@ or
 Usage
 -----
 
-If we were looking to have a UUID supplied as a view argument, we would follow this pattern::
+If we were looking to have a UUID supplied as a view argument, we would follow this pattern
 
 .. code-block:: python
 

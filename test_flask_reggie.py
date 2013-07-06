@@ -11,11 +11,11 @@ class FlaskReggieTestCase(unittest.TestCase):
     def setUp(self):
         """ Construct our Flask Test App """
 
-        self.app = Flask(__name__)
+        self.app = Flask('test-flask-reggie')
         reggie = Reggie()
         reggie.init_app(self.app)
 
-        @app.route('/<regex("[abc0-9]{1,3}"):test>')
+        @self.app.route('/<regex("[abc0-9]{1,3}"):test>')
         def index(test):
             return "ok"
 
