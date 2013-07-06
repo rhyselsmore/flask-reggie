@@ -11,13 +11,14 @@ class FlaskReggieTestCase(unittest.TestCase):
     def setUp(self):
         """ Construct our Flask Test App """
 
-        def index(test):
-            return "ok"
-
         self.app = Flask(__name__)
         reggie = Reggie()
         reggie.init_app(self.app)
-        self.app.add_url_rule('/<regex("[abc0-9]{1,3}"):test>', 'index', index, methods=['GET'])
+
+        @app.route('/<regex("[abc0-9]{1,3}"):test>')
+        def index(test):
+            return "ok"
+
         self.client = self.app.test_client()
 
     def test_valid_pattern(self):
