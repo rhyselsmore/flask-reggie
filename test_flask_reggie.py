@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import flask
 from flask import Flask, request
 from flask_reggie import Reggie
 
 
 def create_app():
-    return Flask('test_flask_reggie')
+    if "0.8" in flask.__version__:
+        return Flask('test_flask_reggie')
+    return Flask('test-flask-reggie')
 
 
 class FlaskReggieTestCase(unittest.TestCase):
